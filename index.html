@@ -6,43 +6,69 @@
 <title>ScoreLab</title>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #0d0d0d;
-    color: white;
+body{
+    margin:0;
+    font-family:Arial;
+    background:#0d0d0d;
+    color:white;
 }
 
-header {
-    background: #111;
-    padding: 20px;
-    text-align: center;
-    font-size: 28px;
-    font-weight: bold;
-    color: #00ff88;
+header{
+    background:#111;
+    padding:20px;
+    text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    color:#00ff88;
 }
 
-.container {
-    padding: 20px;
+.container{
+    padding:20px;
 }
 
-.card {
-    background: #1a1a1a;
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 10px;
+.grid{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:15px;
 }
 
-h2 {
-    color: #00ff88;
+.card{
+    background:#1a1a1a;
+    padding:15px;
+    border-radius:12px;
 }
 
-.small {
-    opacity: 0.7;
-    font-size: 14px;
+.tag{
+    display:inline-block;
+    padding:4px 8px;
+    border-radius:6px;
+    font-size:12px;
+    margin-bottom:8px;
+}
+
+.win{background:#00c853;color:black;}
+.lose{background:#ff1744;color:white;}
+.pending{background:#ffea00;color:black;}
+
+h2{
+    color:#00ff88;
+    margin-top:0;
+}
+
+.statbox{
+    display:flex;
+    justify-content:space-between;
+    background:#111;
+    padding:15px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.small{
+    opacity:0.7;
+    font-size:13px;
 }
 </style>
-
 </head>
 
 <body>
@@ -51,21 +77,57 @@ h2 {
 
 <div class="container">
 
-<div class="card">
-<h2>Günün Tahminleri</h2>
-<p>Manchester City vs Arsenal → 2.5 ÜST</p>
-<p>Real Madrid vs Barcelona → KG VAR</p>
-<p class="small">Son güncelleme: bugün</p>
+<!-- STATISTICS -->
+<div class="statbox">
+    <div>
+        <div>Win</div>
+        <strong>2</strong>
+    </div>
+    <div>
+        <div>Lose</div>
+        <strong>0</strong>
+    </div>
+    <div>
+        <div>Win Rate</div>
+        <strong>%100</strong>
+    </div>
 </div>
 
+<!-- TODAY PICKS -->
 <div class="card">
-<h2>Analiz</h2>
-<p>Takım form durumu, xG verileri ve istatistik analizleri burada paylaşılacak.</p>
+<h2>🔥 Günün Tahminleri</h2>
+
+<div class="tag pending">PENDING</div>
+<p><b>Czechia vs South Africa</b></p>
+<p>Tahmin: Czechia kazanır</p>
+<p>Oran: 1.85</p>
+
+<hr>
+
+<div class="tag pending">PENDING</div>
+<p><b>Switzerland vs Bosnia</b></p>
+<p>Tahmin: 1.5 ÜST</p>
+<p>Oran: 1.35</p>
 </div>
 
+<!-- HISTORY -->
 <div class="card">
-<h2>Performans</h2>
-<p>Bu hafta başarı oranı: %72</p>
+<h2>📊 Geçmiş Tahminler</h2>
+
+<div class="tag win">WIN</div>
+<p>Argentina vs France → KG VAR (1.90)</p>
+
+<br>
+
+<div class="tag win">WIN</div>
+<p>England vs Croatia → 2.5 ÜST (1.75)</p>
+
+<br>
+
+<div class="tag lose">LOSE</div>
+<p>Brazil vs Morocco → MS1 (1.60)</p>
+
+<p class="small">Performans manuel güncellenir (şimdilik)</p>
 </div>
 
 </div>
