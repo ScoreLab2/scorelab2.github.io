@@ -81,15 +81,15 @@ h2{
 <div class="statbox">
     <div>
         <div>Win</div>
-        <strong>2</strong>
+        <strong id="wins">0</strong>
     </div>
     <div>
         <div>Lose</div>
-        <strong>0</strong>
+        <strong id="losses">0</strong>
     </div>
     <div>
         <div>Win Rate</div>
-        <strong>%100</strong>
+        <strong id="winrate">%0</strong>
     </div>
 </div>
 
@@ -131,6 +131,19 @@ h2{
 </div>
 
 </div>
+<script>
+let wins = 2;
+let losses = 1;
 
+function updateStats(){
+    let total = wins + losses;
+    let winRate = total === 0 ? 0 : Math.round((wins / total) * 100);
+
+    document.getElementById("wins").innerText = wins;
+    document.getElementById("losses").innerText = losses;
+    document.getElementById("winrate").innerText = "%" + winRate;
+}
+window.onload = updateStats;
+</script>
 </body>
 </html>
